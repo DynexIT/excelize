@@ -3011,12 +3011,22 @@ func drawCondFmtColorScale(p int, ct string, format *formatConditional) *xlsxCfR
 // drawCondFmtDataBar provides a function to create conditional formatting
 // rule for data bar by given priority, criteria type and format settings.
 func drawCondFmtDataBar(p int, ct string, format *formatConditional) *xlsxCfRule {
+	var maxLength, minLength int
+	if maxLengthFound, err := strconv.Atoi(format.MaxLength); err == nil {
+		maxLength = maxLengthFound
+	}
+	if minLengthFound, err := strconv.Atoi(format.MinLength); err == nil {
+		minLength = minLengthFound
+	}
 	return &xlsxCfRule{
 		Priority: p + 1,
 		Type:     validType[format.Type],
 		DataBar: &xlsxDataBar{
-			Cfvo:  []*xlsxCfvo{{Type: format.MinType}, {Type: format.MaxType}},
-			Color: []*xlsxColor{{RGB: getPaletteColor(format.BarColor)}},
+			MinLength: minLength,
+			MaxLength: maxLength,
+			BarSolid:  true,
+			Cfvo:      []*xlsxCfvo{{Type: format.MinType}, {Type: format.MaxType}},
+			Color:     []*xlsxColor{{RGB: getPaletteColor(format.BarColor)}},
 		},
 	}
 }

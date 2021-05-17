@@ -562,6 +562,7 @@ type xlsxDataBar struct {
 	MaxLength int          `xml:"maxLength,attr,omitempty"`
 	MinLength int          `xml:"minLength,attr,omitempty"`
 	ShowValue bool         `xml:"showValue,attr,omitempty"`
+	BarSolid  bool         `json:"bar_solid,omitempty"`
 	Cfvo      []*xlsxCfvo  `xml:"cfvo"`
 	Color     []*xlsxColor `xml:"color"`
 }
@@ -800,27 +801,30 @@ type formatPanes struct {
 
 // formatConditional directly maps the conditional format settings of the cells.
 type formatConditional struct {
-	Type         string `json:"type"`
-	AboveAverage bool   `json:"above_average"`
-	Percent      bool   `json:"percent"`
-	Format       int    `json:"format"`
-	Criteria     string `json:"criteria"`
-	Value        string `json:"value,omitempty"`
-	Minimum      string `json:"minimum,omitempty"`
-	Maximum      string `json:"maximum,omitempty"`
-	MinType      string `json:"min_type,omitempty"`
-	MidType      string `json:"mid_type,omitempty"`
-	MaxType      string `json:"max_type,omitempty"`
-	MinValue     string `json:"min_value,omitempty"`
-	MidValue     string `json:"mid_value,omitempty"`
-	MaxValue     string `json:"max_value,omitempty"`
-	MinColor     string `json:"min_color,omitempty"`
-	MidColor     string `json:"mid_color,omitempty"`
-	MaxColor     string `json:"max_color,omitempty"`
-	MinLength    string `json:"min_length,omitempty"`
-	MaxLength    string `json:"max_length,omitempty"`
-	MultiRange   string `json:"multi_range,omitempty"`
-	BarColor     string `json:"bar_color,omitempty"`
+	Type            string `json:"type"`
+	AboveAverage    bool   `json:"above_average"`
+	Percent         bool   `json:"percent"`
+	Format          int    `json:"format"`
+	Criteria        string `json:"criteria"`
+	Value           string `json:"value,omitempty"`
+	Minimum         string `json:"minimum,omitempty"`
+	Maximum         string `json:"maximum,omitempty"`
+	MinType         string `json:"min_type,omitempty"`
+	MidType         string `json:"mid_type,omitempty"`
+	MaxType         string `json:"max_type,omitempty"`
+	MinValue        string `json:"min_value,omitempty"`
+	MidValue        string `json:"mid_value,omitempty"`
+	MaxValue        string `json:"max_value,omitempty"`
+	MinColor        string `json:"min_color,omitempty"`
+	MidColor        string `json:"mid_color,omitempty"`
+	MaxColor        string `json:"max_color,omitempty"`
+	MinLength       string `json:"min_length,omitempty"`
+	MaxLength       string `json:"max_length,omitempty"`
+	MultiRange      string `json:"multi_range,omitempty"`
+	BarColor        string `json:"bar_color,omitempty"`
+	DataBar2010     bool   `json:"data_bar_2010,omitempty"`
+	BarAxisPosition string `json:"bar_axis_position,omitempty"`
+	BarSolid        bool   `json:"bar_solid,omitempty"`
 }
 
 // FormatSheetProtection directly maps the settings of worksheet protection.

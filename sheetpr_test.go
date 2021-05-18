@@ -2,12 +2,11 @@ package excelize_test
 
 import (
 	"fmt"
+	"github.com/DynexIT/excelize/v2"
 	"testing"
 
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
-
-	"github.com/360EntSecGroup-Skylar/excelize/v2"
 )
 
 var _ = []excelize.SheetPrOption{

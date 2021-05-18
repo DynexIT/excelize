@@ -25,8 +25,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-
-	"golang.org/x/net/html/charset"
 )
 
 // File define a populated spreadsheet file struct.
@@ -85,7 +83,7 @@ func newFile() *File {
 		DecodeVMLDrawing: make(map[string]*decodeVmlDrawing),
 		VMLDrawing:       make(map[string]*vmlDrawing),
 		Relationships:    make(map[string]*xlsxRelationships),
-		CharsetReader:    charset.NewReaderLabel,
+		//CharsetReader:    charset.NewReaderLabel,
 	}
 }
 
